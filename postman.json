@@ -1,0 +1,401 @@
+{
+  "info": {
+    "_postman_id": "Mahally",
+    "name": "Mahaally",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": {
+                "customer": "627843132843127843127843",
+                "items": [
+                  {
+                    "product": "627843132843127843127844",
+                    "quantity": 1
+                  }
+                ],
+                "shippingAddress": "123 Main Street",
+                "billingAddress": "456 Elm Street",
+                "paymentMethod": "VISA",
+                "totalPrice": 100
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get My Orders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/mine",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Order by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{order_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pay for Order",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{order_id}}/pay/{{payment_result}}",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Order",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/orders/{{order_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/products/{{product_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Search Products",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/products?category={{category}}&searchKeyword={{searchKeyword}}&sortOrder={{sortOrder}}",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{{product}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{{product}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/products/{{product_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/products/{{product_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/products/{{product_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save Product Review",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{{review}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/products/{{productId}}/reviews",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Update User Data",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.MIT3Qp2Wu_5XuGbHJssJd7g4i3QGK2QytiJY3XhNV4E"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{{user_data}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/{{user_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Sign In",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{{sign_in_data}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/signin",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{{register_data}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/register",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

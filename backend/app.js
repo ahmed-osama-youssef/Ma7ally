@@ -2,12 +2,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
+const cors = require('cors');
 
 const cartRoutes = require('./routes/cartRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Add the JSON body parser middleware
 app.use(express.json());
