@@ -1,0 +1,41 @@
+headers: {
+        Authorization: ' Bearer ' + userInfo.token
+}
+
+----------------orderRoutes.js---------------------------------
+[POST]/api/orders
+ - body: order
+[GET]/api/orders/mine
+[GET]/api/orders
+[GET]/api/orders/{order_id}
+[PUT]/api/orders/{order_id}/pay/{payment_result}
+[DELETE]/api/orders/{order_id}
+
+----------------cartRoutes.js -----------------------------------
+[GET]/api/products/{product_id}
+
+
+----------------productRoutes.js---------------------------------
+
+[GET]/api/products?category={category}&searchKeyword={searchKeyword}&sortOrder={sortOrder}
+#create/update a product
+[POST]/api/products
+ - body: product
+[POST]/api/products/{product_id}
+ - body: product
+[GET]/api/products/{product_id}
+[DELETE]/api/products/{product_id}
+#save product review
+[POST]/api/products/${productId}/reviews
+- body: review
+
+
+---------------userRoutes.js----------------------------------
+#update user data
+[PUT]/api/users/{user_id}
+ - body: { name, email, password }
+[POST]/api/users/signin
+ - body: { email, password }
+ [POST]/api/users/register
+ - body: { name, email, password }
+
