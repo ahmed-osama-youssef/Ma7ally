@@ -1,6 +1,10 @@
 import React from "react";
-import { Grid, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useProducts } from "../../hooks/product.hooks";
+import ProductCard from "../../components/ProductCard";
+import styled from "styled-components";
+
+
 
 function ProductList() {
     const { isLoading, error, products } = useProducts();
@@ -14,32 +18,24 @@ function ProductList() {
     }
 
     return (
-        <Grid container spacing={2}>
+        <GridContainer container spacing={2}>
             {products.map((product) => (
-                <Grid item xs={4} key={product.id}>
-                    <Card>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image={product.images[0]}
-                            alt={product.name}
-                        />
-                        <CardContent>
-                            <Typography variant="h5" component="div">
-                                {product.name}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                {product.description}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                ${product.price}
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </Grid>
+                <ProductCard key={product.id} product={product} />
             ))}
-        </Grid>
+        </GridContainer>
     );
 }
+
+// create GridContainer styled component
+const GridContainer = styled(Grid)`
+    display: flex;
+    width: 100%;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+`;
+
+
+
 
 export default ProductList;
